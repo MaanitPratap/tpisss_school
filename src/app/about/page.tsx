@@ -20,6 +20,7 @@ export default function About() {
         description="Discover our rich history, mission, and commitment to excellence in education"
         isLoaded={isLoaded}
         highlightText="TPISSS"
+        logoLeft="/images/Logo.png"
       />
 
       {/* Mission & Vision */}

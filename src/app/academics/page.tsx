@@ -89,6 +89,7 @@ export default function Academics() {
         description="Discover our comprehensive curriculum designed to nurture intellectual growth, critical thinking, and prepare students for future success"
         isLoaded={isLoaded}
         highlightText="Excellence"
+        logoLeft="/images/Logo.png"
       />
 
       {/* Academic Levels */}

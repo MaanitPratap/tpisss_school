@@ -46,13 +46,12 @@ export default function FeaturesSection({ isLoaded }: FeaturesSectionProps) {
               />
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full">
             <div className="grid md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <div 
                   key={index}
                   className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                  style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{feature.title}</h3>

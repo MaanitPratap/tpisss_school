@@ -66,6 +66,7 @@ export default function Facilities() {
         description="State-of-the-art infrastructure designed to provide the best learning environment and support holistic development of our students"
         isLoaded={isLoaded}
         highlightText="Facilities"
+        logoLeft="/images/Logo.png"
       />
 
       {/* Facilities Overview */}
