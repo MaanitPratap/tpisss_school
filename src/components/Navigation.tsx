@@ -47,9 +47,11 @@ export default function Navigation({ activePage = 'home' }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">T</span>
-            </div>
+            <img
+              src="/images/Logo.png"
+              alt="TPISSS Logo"
+              className="w-10 h-10 rounded-lg object-contain drop-shadow"
+            />
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">TPISSS</h1>
               <p className="text-xs bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent font-medium">
