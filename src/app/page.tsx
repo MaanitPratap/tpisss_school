@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <Navigation activePage="home" />
       {/* Full-width hero image */}
       <div className="relative w-full h-[40vw] max-h-[420px] min-h-[200px] overflow-hidden mb-8 transition-all duration-1000">

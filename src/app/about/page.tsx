@@ -13,7 +13,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <Navigation activePage="about" />
       <PageHero 
         title="About TPISSS"
@@ -23,7 +23,7 @@ export default function About() {
       />
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -48,7 +48,7 @@ export default function About() {
               </ul>
             </div>
             <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200">
+              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
                   To be a leading educational institution that inspires students to reach their full potential, 
@@ -61,7 +61,7 @@ export default function About() {
       </section>
 
       {/* History Timeline */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
@@ -105,7 +105,7 @@ export default function About() {
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className={`w-1/2 ${index % 2 === 0 ? 'md:pr-8 text-right' : 'md:pl-8 text-left'}`}>
                     <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 200}ms` }}>
-                      <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                      <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                         <h3 className="text-2xl font-bold text-gray-900 mb-2">{milestone.year}</h3>
                         <h4 className="text-lg font-semibold text-blue-600 mb-2">{milestone.title}</h4>
                         <p className="text-gray-600">{milestone.description}</p>
@@ -125,7 +125,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
@@ -169,7 +169,7 @@ export default function About() {
             ].map((value, index) => (
               <div 
                 key={index}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
@@ -182,7 +182,7 @@ export default function About() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
@@ -211,15 +211,15 @@ export default function About() {
             ].map((leader, index) => (
               <div 
                 key={index}
-                className={`bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   {leader.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{leader.name}</h3>
-                <p className="text-blue-600 font-medium mb-3">{leader.position}</p>
-                <p className="text-gray-600 leading-relaxed">{leader.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 dark:text-white">{leader.name}</h3>
+                <p className="text-blue-600 font-medium mb-3 dark:text-blue-400">{leader.position}</p>
+                <p className="text-gray-600 leading-relaxed dark:text-gray-300">{leader.description}</p>
               </div>
             ))}
           </div>

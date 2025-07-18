@@ -19,7 +19,7 @@ export default function PageHero({
     <section id="home" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             {highlightText && highlightText !== title ? (
               <>
                 {title.split(highlightText)[0]}
@@ -35,12 +35,12 @@ export default function PageHero({
             )}
           </h1>
           {subtitle && (
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200 mb-8">
               {subtitle}
             </h2>
           )}
           {description && (
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
               {description}
             </p>
           )}

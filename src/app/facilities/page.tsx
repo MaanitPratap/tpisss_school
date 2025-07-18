@@ -59,7 +59,7 @@ export default function Facilities() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <Navigation activePage="facilities" />
       <PageHero 
         title="World-Class Facilities"
@@ -69,7 +69,7 @@ export default function Facilities() {
       />
 
       {/* Facilities Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Facilities</h2>
@@ -82,7 +82,7 @@ export default function Facilities() {
             {facilities.map((facility, index) => (
               <div 
                 key={facility.id}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border-2 cursor-pointer transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 ${activeFacility === facility.id ? 'border-blue-600 shadow-lg' : 'border-gray-200'}`}
+                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border-2 cursor-pointer transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${activeFacility === facility.id ? 'border-blue-600 shadow-lg' : 'border-gray-200'}`}
                 onClick={() => setActiveFacility(facility.id)}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -106,7 +106,7 @@ export default function Facilities() {
       </section>
 
       {/* Detailed Facility View */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
@@ -126,7 +126,7 @@ export default function Facilities() {
               </div>
             </div>
             <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
                 <div className="text-center">
                   <div className="text-6xl mb-4">{facilities.find(f => f.id === activeFacility)?.icon}</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -143,7 +143,7 @@ export default function Facilities() {
       </section>
 
       {/* Infrastructure Stats */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-900 dark:to-green-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Infrastructure Highlights</h2>
@@ -173,7 +173,7 @@ export default function Facilities() {
       </section>
 
       {/* Additional Features */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Additional Features</h2>
@@ -217,7 +217,7 @@ export default function Facilities() {
             ].map((feature, index) => (
               <div 
                 key={index}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{feature.icon}</div>

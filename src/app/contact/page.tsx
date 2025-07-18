@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <Navigation activePage="contact" />
       <PageHero 
         title="Get in Touch"
@@ -57,16 +57,16 @@ export default function Contact() {
       />
 
       {/* Contact Information */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 dark:text-white">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
                       Full Name *
                     </label>
                     <input
@@ -76,12 +76,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                       placeholder="Enter your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
                       Email Address *
                     </label>
                     <input
@@ -91,7 +91,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
                       Phone Number
                     </label>
                     <input
@@ -108,12 +108,12 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                       placeholder="Enter your phone number"
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
                       Subject *
                     </label>
                     <select
@@ -122,7 +122,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                     >
                       <option value="">Select a subject</option>
                       <option value="admission">Admission Inquiry</option>
@@ -135,7 +135,7 @@ export default function Contact() {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
                     Message *
                   </label>
                   <textarea
@@ -145,7 +145,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                     placeholder="Tell us more about your inquiry..."
                   ></textarea>
                 </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed dark:from-blue-800 dark:to-blue-900 dark:hover:from-blue-900 dark:hover:to-blue-950"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center">
@@ -172,15 +172,15 @@ export default function Contact() {
 
             {/* Contact Information */}
             <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Information</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 dark:text-white">Contact Information</h2>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
                   <div className="text-2xl text-blue-600">
                     📍
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">Address</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
                       Village Jethuwal, Batala Road<br />
                       Amritsar-143001<br />
                       Punjab, India
@@ -193,8 +193,8 @@ export default function Contact() {
                     📞
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">Phone</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
                       Ph: 8968223712<br />
                       M: (+91) 7042194677<br />
                       M: (+91) 9815213772<br />
@@ -208,8 +208,8 @@ export default function Contact() {
                     ✉️
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">Email</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
                       tpisss_school@hotmail.com
                     </p>
                   </div>
@@ -220,8 +220,8 @@ export default function Contact() {
                     🕒
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">Office Hours</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
                       Monday - Friday: 8:00 AM - 4:00 PM<br />
                       Saturday: 8:00 AM - 12:00 PM<br />
                       Sunday: Closed
@@ -235,21 +235,21 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Find Us</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               Visit our campus to experience the TPISSS difference firsthand
             </p>
           </div>
           
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
             <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <div className="text-6xl mb-4">🗺️</div>
-                <p className="text-gray-600">Interactive Map Coming Soon</p>
-                <p className="text-sm text-gray-500 mt-2">We're working on an interactive map to help you find us easily</p>
+                <p className="text-gray-600 dark:text-gray-300">Interactive Map Coming Soon</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">We're working on an interactive map to help you find us easily</p>
               </div>
             </div>
           </div>
@@ -257,11 +257,11 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               Quick answers to common questions about TPISSS
             </p>
           </div>
@@ -298,8 +298,8 @@ export default function Contact() {
                 className={`p-6 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-lg transition-all duration-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 dark:text-white">{faq.question}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>

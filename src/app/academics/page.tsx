@@ -82,7 +82,7 @@ export default function Academics() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <Navigation activePage="academics" />
       <PageHero 
         title="Academic Excellence"
@@ -92,7 +92,7 @@ export default function Academics() {
       />
 
       {/* Academic Levels */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Academic Levels</h2>
@@ -122,7 +122,7 @@ export default function Academics() {
       </section>
 
       {/* Curriculum Details */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -137,7 +137,7 @@ export default function Academics() {
             {subjects[activeTab as keyof typeof subjects]?.map((subject, index) => (
               <div 
                 key={index}
-                className={`bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`bg-white p-6 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-center">
@@ -151,7 +151,7 @@ export default function Academics() {
       </section>
 
       {/* Teaching Methodology */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Teaching Methodology</h2>
@@ -195,7 +195,7 @@ export default function Academics() {
             ].map((method, index) => (
               <div 
                 key={index}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{method.icon}</div>
@@ -208,7 +208,7 @@ export default function Academics() {
       </section>
 
       {/* Academic Achievements */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-900 dark:to-green-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Academic Achievements</h2>
@@ -226,7 +226,7 @@ export default function Academics() {
             ].map((achievement, index) => (
               <div 
                 key={index}
-                className={`text-white ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`text-white ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} dark:text-yellow-200`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="text-4xl md:text-5xl font-bold mb-2">{achievement.number}</div>
