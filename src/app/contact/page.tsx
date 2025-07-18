@@ -5,6 +5,16 @@ import Navigation from '../../components/Navigation';
 import PageHero from '../../components/PageHero';
 import Footer from '../../components/Footer';
 
+
+// Inside your Contact.tsx
+import dynamic from 'next/dynamic';
+
+// Dynamically load map with no SSR
+const LeafletMap = dynamic(() => import('../../components/LeafletMap'), {
+  ssr: false,
+});
+
+
 export default function Contact() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
@@ -244,14 +254,8 @@ export default function Contact() {
             </p>
           </div>
           
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-            <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🗺️</div>
-                <p className="text-gray-600 dark:text-gray-300">Interactive Map Coming Soon</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">We're working on an interactive map to help you find us easily</p>
-              </div>
-            </div>
+          <div className="h-[500px] rounded-lg overflow-hidden">
+            <LeafletMap />
           </div>
         </div>
       </section>

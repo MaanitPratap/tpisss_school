@@ -43,7 +43,7 @@ export default function Navigation({ activePage = 'home' }: NavigationProps) {
   };
 
   return (
-    <nav className="sticky top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <nav className="sticky top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
@@ -51,7 +51,7 @@ export default function Navigation({ activePage = 'home' }: NavigationProps) {
               <span className="text-white font-bold text-lg">T</span>
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-gray-900">TPISSS</h1>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">TPISSS</h1>
               <p className="text-xs bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent font-medium">
                 The Pinewood International Senior Secondary School
               </p>

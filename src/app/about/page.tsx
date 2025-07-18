@@ -27,12 +27,12 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 dark:text-white">Our Mission</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed dark:text-gray-300">
                 To provide world-class education that nurtures intellectual curiosity, fosters creativity, 
                 and develops responsible global citizens who are prepared to meet the challenges of tomorrow.
               </p>
-              <ul className="space-y-3 text-gray-600">
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
                   Excellence in academic achievement
@@ -48,9 +48,9 @@ export default function About() {
               </ul>
             </div>
             <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed">
+              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">Our Vision</h3>
+                <p className="text-gray-600 leading-relaxed dark:text-gray-300">
                   To be a leading educational institution that inspires students to reach their full potential, 
                   embrace diversity, and contribute positively to society through knowledge, compassion, and innovation.
                 </p>
@@ -64,8 +64,8 @@ export default function About() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Our Journey</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               A timeline of our school's growth and achievements over the years
             </p>
           </div>
@@ -106,9 +106,9 @@ export default function About() {
                   <div className={`w-1/2 ${index % 2 === 0 ? 'md:pr-8 text-right' : 'md:pl-8 text-left'}`}>
                     <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 200}ms` }}>
                       <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">{milestone.year}</h3>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2 dark:text-white">{milestone.year}</h3>
                         <h4 className="text-lg font-semibold text-blue-600 mb-2">{milestone.title}</h4>
-                        <p className="text-gray-600">{milestone.description}</p>
+                        <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
                       </div>
                     </div>
                   </div>
@@ -128,8 +128,8 @@ export default function About() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Our Core Values</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               The principles that guide everything we do at TPISSS
             </p>
           </div>
@@ -169,12 +169,12 @@ export default function About() {
             ].map((value, index) => (
               <div 
                 key={index}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 dark:text-white">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed dark:text-gray-300">{value.description}</p>
               </div>
             ))}
           </div>
@@ -185,8 +185,8 @@ export default function About() {
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Leadership Team</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
               Meet the dedicated professionals who guide our school's vision and mission
             </p>
           </div>
@@ -194,25 +194,24 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Dr. Sarah Johnson",
-                position: "Principal",
-                description: "Leading our school with over 20 years of educational experience"
+                name: "Adv. Surjit Singh Likhari",
+                position: "Chairman",
+                description: "Leading our school with over 30 years of educational experience"
               },
               {
-                name: "Mr. Rajesh Kumar",
-                position: "Vice Principal",
+                name: "Er. Harneet Singh",
+                position: "Director",
                 description: "Overseeing academic excellence and student development"
               },
               {
-                name: "Ms. Priya Sharma",
-                position: "Head of Academics",
+                name: "Mr. Avneet Singh",
+                position: "Principal",
                 description: "Ensuring curriculum innovation and teaching excellence"
-              }
+              },
             ].map((leader, index) => (
               <div 
                 key={index}
                 className={`bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                   {leader.name.split(' ').map(n => n[0]).join('')}
