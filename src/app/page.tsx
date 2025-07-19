@@ -33,21 +33,47 @@ export default function Home() {
         {/* Dark tint overlay */}
         <div className="absolute inset-0 bg-black/60" />
         {/* Logo overlay */}
-        <motion.div layoutId="logo-hero" className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image
-            src="/images/Logo.png"
-            alt="TPISSS Logo"
-            width={180}
-            height={180}
-            className="drop-shadow-lg"
-            priority
-          />
+        <motion.div 
+          layoutId="logo-hero" 
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+          animate={isLoaded ? { opacity: 1, scale: 1, rotate: 0 } : { opacity: 0, scale: 0.8, rotate: -5 }}
+          transition={{ 
+            duration: 1.2, 
+            ease: "easeOut",
+            delay: 0.3 
+          }}
+        >
+          <motion.div
+            whileHover={{ 
+              scale: 1.05,
+              rotate: 2,
+              transition: { duration: 0.3 }
+            }}
+            className="relative"
+          >
+            <Image
+              src="/images/Logo.png"
+              alt="TPISSS Logo"
+              width={180}
+              height={180}
+              className="drop-shadow-lg filter brightness-110"
+              priority
+            />
+            {/* Subtle glow effect */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isLoaded ? { opacity: 0.4 } : { opacity: 0 }}
+              transition={{ duration: 1.5, delay: 0.8 }}
+              className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-green-400/30 rounded-full blur-2xl -z-10"
+            />
+          </motion.div>
         </motion.div>
       </div>
       {/* Remove <PageHero ... /> from here, as hero is now custom above */}
       <PageHero 
         title="The Pinewood International Senior Secondary School"
-        description="Nurturing excellence, fostering innovation, and building character for tomorrow's leaders"
+        description="Established in April 1995, TPISSS is a co-educational institution dedicated to academic and social well-being, serving students from Nursery to Senior Secondary with a vision to set standards of educational excellence in India."
         isLoaded={isLoaded}
       />
       <FeaturesSection isLoaded={isLoaded} />

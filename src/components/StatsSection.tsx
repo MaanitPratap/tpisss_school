@@ -6,9 +6,9 @@ interface StatsSectionProps {
 
 export default function StatsSection({ isLoaded }: StatsSectionProps) {
   const stats = [
-    { number: "500+", label: "Students" },
-    { number: "50+", label: "Expert Teachers" },
-    { number: "95%", label: "Success Rate" },
+    { number: "600+", label: "Students" },
+    { number: "30+", label: "Expert Teachers" },
+    { number: "100%", label: "Success Rate" },
     { number: "25+", label: "Years Experience" }
   ];
 

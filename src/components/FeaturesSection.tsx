@@ -11,17 +11,22 @@ export default function FeaturesSection({ isLoaded }: FeaturesSectionProps) {
     {
       icon: "🎓",
       title: "Academic Excellence",
-      description: "Consistently high academic performance with personalized learning approaches"
+      description: "Centre of learning focused on effective teaching and student learning with meaningful relationships in an atmosphere of academic rigor"
     },
     {
-      icon: "🌍",
-      title: "Global Perspective",
-      description: "International curriculum with focus on global citizenship and cultural awareness"
+      icon: "🏫",
+      title: "Modern Infrastructure",
+      description: "55 classrooms, smart classrooms, auditorium, library with audio-visual instruments, and computer labs across six acres"
     },
     {
-      icon: "🔬",
-      title: "Modern Facilities",
-      description: "State-of-the-art laboratories, libraries, and technology-enabled classrooms"
+      icon: "🤝",
+      title: "Human Values",
+      description: "Institution whose ethos and practice is based upon human precepts, committed to honoring human values in all that we do"
+    },
+    {
+      icon: "🌟",
+      title: "Holistic Development",
+      description: "Comprehensive approach to education that nurtures intellectual, physical, emotional, and social growth of every student"
     }
   ];
 
@@ -46,8 +51,8 @@ export default function FeaturesSection({ isLoaded }: FeaturesSectionProps) {
               />
             </div>
           </div>
-          <div className="w-full">
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="w-full lg:w-1/2">
+            <div className="grid md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
                 <div 
                   key={index}
@@ -55,7 +60,7 @@ export default function FeaturesSection({ isLoaded }: FeaturesSectionProps) {
                 >
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-left">{feature.description}</p>
                 </div>
               ))}
             </div>

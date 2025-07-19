@@ -28,33 +28,73 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 dark:text-white">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed dark:text-gray-300">
-                To provide world-class education that nurtures intellectual curiosity, fosters creativity, 
-                and develops responsible global citizens who are prepared to meet the challenges of tomorrow.
-              </p>
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                  Excellence in academic achievement
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                  Character development and values
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                  Innovation and critical thinking
-                </li>
-              </ul>
+              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 h-full">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">Our Mission</h3>
+                <p className="text-gray-600 leading-relaxed mb-6 dark:text-gray-300">
+                  To provide world-class education that nurtures intellectual curiosity, fosters creativity, 
+                  and develops responsible global citizens who are prepared to meet the challenges of tomorrow.
+                </p>
+                <div className="space-y-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                    <span>Excellence in academic achievement</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                    <span>Character development and values</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                    <span>Innovation and critical thinking</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700">
+              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 h-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed dark:text-gray-300">
-                  To be a leading educational institution that inspires students to reach their full potential, 
-                  embrace diversity, and contribute positively to society through knowledge, compassion, and innovation.
-                </p>
+                <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                  <p className="leading-relaxed">
+                    From earliest entry to the school at Nursery, we seek to teach and encourage students to reflect these values in all areas of their social, emotional, cognitive and physical development.
+                  </p>
+                  <p className="leading-relaxed">
+                    In a wider context we also plan to develop strong links with the community, fulfilling our intention to provide a challenging program of studies that will meet many of the intellectual, spiritual, physical, emotional and social needs of students, families and staff.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Accreditation & Recognition */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Accreditation & Recognition</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+              Official recognition and affiliations that validate our educational standards
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className={`bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl border-2 border-blue-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-blue-600 shadow-xl transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="text-center">
+                <div className="text-5xl mb-6">🏛️</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white">CBSE Affiliation</h3>
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                  <p className="text-lg font-medium">
+                    The School is Affiliated to CBSE Board, Delhi.
+                  </p>
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Affiliation Number:</p>
+                    <p className="text-xl font-bold text-blue-600 dark:text-blue-400">1630597</p>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                    This affiliation ensures that our curriculum meets the highest standards set by the Central Board of Secondary Education, 
+                    providing students with nationally recognized qualifications and preparing them for higher education and career success.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -78,19 +118,24 @@ export default function About() {
             <div className="space-y-12">
               {[
                 {
-                  year: "1998",
+                  year: "1995",
                   title: "Foundation",
-                  description: "TPISSS was established with a vision to provide quality education"
+                  description: "TPISSS opened in April 1995 with a vision to set a standard of educational excellence in India as an institution whose ethos and practice is based upon human precepts."
+                },
+                {
+                  year: "2000",
+                  title: "Early Growth",
+                  description: "Established as a co-educational institution dedicated to academic and social well-being of all students"
                 },
                 {
                   year: "2005",
                   title: "Expansion",
-                  description: "Added senior secondary section and modern facilities"
+                  description: "Added senior secondary section and modern facilities across six acres of land"
                 },
                 {
                   year: "2012",
                   title: "Excellence",
-                  description: "Achieved 100% board results for the first time"
+                  description: "Achieved great distinction in all respects within short span of time"
                 },
                 {
                   year: "2020",
@@ -171,7 +216,7 @@ export default function About() {
               <div 
                 key={index}
                 className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3 dark:text-white">{value.title}</h3>
@@ -182,46 +227,21 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Leadership Team CTA */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 dark:text-gray-300">
               Meet the dedicated professionals who guide our school's vision and mission
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Adv. Surjit Singh Likhari",
-                position: "Chairman",
-                description: "Leading our school with over 30 years of educational experience"
-              },
-              {
-                name: "Er. Harneet Singh",
-                position: "Director",
-                description: "Overseeing academic excellence and student development"
-              },
-              {
-                name: "Mr. Avneet Singh",
-                position: "Principal",
-                description: "Ensuring curriculum innovation and teaching excellence"
-              },
-            ].map((leader, index) => (
-              <div 
-                key={index}
-                className={`bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              >
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
-                  {leader.name.split(' ').map(n => n[0]).join('')}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 dark:text-white">{leader.name}</h3>
-                <p className="text-blue-600 font-medium mb-3 dark:text-blue-400">{leader.position}</p>
-                <p className="text-gray-600 leading-relaxed dark:text-gray-300">{leader.description}</p>
-              </div>
-            ))}
+            
+            <a 
+              href="/leadership" 
+              className="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Meet Our Full Leadership Team
+            </a>
           </div>
         </div>
       </section>
@@ -229,4 +249,4 @@ export default function About() {
       <Footer />
     </div>
   );
-} 
+}

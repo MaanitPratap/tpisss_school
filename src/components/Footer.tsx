@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">TPISSS</h3>
             <p className="text-gray-400 dark:text-gray-400">
-              The Pinewood International Senior Secondary School - Nurturing excellence since 1998
+              The Pinewood International Senior Secondary School - Nurturing excellence since 1995
             </p>
           </div>
           <div>

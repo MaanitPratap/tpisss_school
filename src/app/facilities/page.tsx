@@ -7,7 +7,6 @@ import Footer from '../../components/Footer';
 
 export default function Facilities() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeFacility, setActiveFacility] = useState('classrooms');
 
   useEffect(() => {
     setIsLoaded(true);
@@ -16,45 +15,59 @@ export default function Facilities() {
   const facilities = [
     {
       id: 'classrooms',
-      name: 'Smart Classrooms',
+      name: '55 Classrooms',
       icon: '🏫',
-      description: 'Modern, technology-enabled classrooms with interactive whiteboards and digital learning tools',
-      features: ['Interactive whiteboards', 'Audio-visual equipment', 'Comfortable seating', 'Climate control']
-    },
-    {
-      id: 'labs',
-      name: 'Science Laboratories',
-      icon: '🔬',
-      description: 'Well-equipped physics, chemistry, and biology labs for hands-on learning experiences',
-      features: ['Physics lab', 'Chemistry lab', 'Biology lab', 'Computer lab']
+      description: 'The school has 55 classrooms including smart classrooms with modern technology and comfortable learning environments',
+      details: 'Modern and medieval architecture with smart classrooms featuring interactive whiteboards and digital learning tools'
     },
     {
       id: 'library',
       name: 'Digital Library',
       icon: '📚',
-      description: 'Extensive collection of books, digital resources, and study spaces for students',
-      features: ['Physical books', 'E-books', 'Study rooms', 'Research facilities']
+      description: 'Fully equipped library with Modern Audio-Visual instruments of various disciplines and spacious study areas',
+      details: 'Extensive collection of books, audio-visual instruments, study rooms, and research facilities for comprehensive learning'
+    },
+    {
+      id: 'computer',
+      name: 'Computer Lab',
+      icon: '💻',
+      description: 'Computer Room with software computers and qualified staff engaged to provide basic applications for Computer Science',
+      details: 'Software computers with qualified staff providing basic applications and Computer Science education'
+    },
+    {
+      id: 'auditorium',
+      name: 'Auditorium',
+      icon: '🎭',
+      description: 'Large auditorium for performances, assemblies, and school events with modern audio-visual equipment',
+      details: 'Large capacity auditorium with modern audio-visual equipment for performances and assemblies'
+    },
+    {
+      id: 'activities',
+      name: 'Activity Halls',
+      icon: '🎨',
+      description: 'Two dedicated activity halls for co-curricular activities and special programs',
+      details: 'Two dedicated activity halls providing flexible space for co-curricular activities and special programs'
     },
     {
       id: 'sports',
-      name: 'Sports Facilities',
+      name: 'Sports Grounds',
       icon: '⚽',
-      description: 'Comprehensive sports infrastructure for physical development and recreation',
-      features: ['Indoor stadium', 'Outdoor grounds', 'Swimming pool', 'Fitness center']
+      description: 'Spacious grounds for every sport and athletics with gymnastics coaching and comprehensive sports facilities',
+      details: 'Multiple sports grounds with athletics facilities, gymnastics coaching, and comprehensive sports equipment'
+    },
+    {
+      id: 'labs',
+      name: 'Science Laboratories',
+      icon: '🔬',
+      description: 'Well equipped Science Laboratories for hands-on learning and practical experiments',
+      details: 'Physics, Chemistry, and Biology labs with modern equipment for hands-on learning experiences'
     },
     {
       id: 'transport',
       name: 'Transportation',
       icon: '🚌',
-      description: 'Safe and reliable transportation services covering major routes in the city',
-      features: ['GPS-enabled buses', 'Trained drivers', 'Multiple routes', 'Safety protocols']
-    },
-    {
-      id: 'cafeteria',
-      name: 'Cafeteria & Dining',
-      icon: '🍽️',
-      description: 'Hygienic and nutritious meals prepared in our modern kitchen facilities',
-      features: ['Healthy meals', 'Hygienic kitchen', 'Dining hall', 'Snack counters']
+      description: 'School vehicles to bring children from remote places with safe and reliable transportation services',
+      details: 'School vehicles providing safe and reliable transportation services covering remote areas'
     }
   ];
 
@@ -63,110 +76,66 @@ export default function Facilities() {
       <Navigation activePage="facilities" />
       <PageHero 
         title="World-Class Facilities"
-        description="State-of-the-art infrastructure designed to provide the best learning environment and support holistic development of our students"
+        description="State-of-the-art infrastructure spread across six acres, designed to provide the best learning environment and support holistic development"
         isLoaded={isLoaded}
         highlightText="Facilities"
         logoLeft="/images/Logo.png"
       />
 
-      {/* Facilities Overview */}
+      {/* Campus Overview */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Facilities</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our comprehensive range of facilities that support academic excellence and personal growth
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Our Campus</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
+              The school is spread across six acres of land with a gorgeous building displaying a unique type of modern and medieval architecture. 
+              Our campus is only 12 km from the central Bus Stand of Amritsar and about 14 km from the Amritsar Railway Station on the Batala road leading to Pathankot.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {facilities.map((facility, index) => (
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            {[
+              { number: "55", label: "Classrooms", icon: "🏫" },
+              { number: "6", label: "Acres Campus", icon: "🏛️" },
+              { number: "2", label: "Activity Halls", icon: "🎨" },
+              { number: "24/7", label: "Generator Backup", icon: "⚡" }
+            ].map((stat, index) => (
               <div 
-                key={facility.id}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border-2 cursor-pointer transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${activeFacility === facility.id ? 'border-blue-600 shadow-lg' : 'border-gray-200'}`}
-                onClick={() => setActiveFacility(facility.id)}
+                key={index}
+                className={`text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-center">
-                  <div className="text-4xl mb-4">{facility.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{facility.name}</h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">{facility.description}</p>
-                  <div className="space-y-2">
-                    {facility.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center justify-center space-x-2">
-                        <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Detailed Facility View */}
+      {/* Facilities Grid */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                {facilities.find(f => f.id === activeFacility)?.name}
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {facilities.find(f => f.id === activeFacility)?.description}
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {facilities.find(f => f.id === activeFacility)?.features.map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className={`transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">{facilities.find(f => f.id === activeFacility)?.icon}</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {facilities.find(f => f.id === activeFacility)?.name}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Experience the best in educational infrastructure designed for modern learning needs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Infrastructure Stats */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-900 dark:to-green-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Infrastructure Highlights</h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Numbers that reflect our commitment to providing world-class facilities
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Our Facilities</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+              Comprehensive range of facilities designed to support academic excellence and personal growth
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { number: "50+", label: "Smart Classrooms" },
-              { number: "10+", label: "Laboratories" },
-              { number: "5", label: "Sports Grounds" },
-              { number: "24/7", label: "Security" }
-            ].map((stat, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {facilities.map((facility, index) => (
               <div 
-                key={index}
-                className={`text-center text-white ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 200}ms` }}
+                key={facility.id}
+                className={`p-6 rounded-xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-lg opacity-90">{stat.label}</div>
+                <div className="text-center">
+                  <div className="text-4xl mb-4">{facility.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 dark:text-white">{facility.name}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed dark:text-gray-300">{facility.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -177,9 +146,9 @@ export default function Facilities() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Additional Features</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Supporting infrastructure that enhances the learning experience
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-white">Supporting Infrastructure</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+              Additional features that enhance the learning experience and ensure student well-being
             </p>
           </div>
           
@@ -188,42 +157,42 @@ export default function Facilities() {
               {
                 icon: "🔒",
                 title: "Security & Safety",
-                description: "24/7 security personnel, CCTV surveillance, and emergency response systems"
+                description: "24/7 security personnel, CCTV surveillance, fire safety equipment, and comprehensive emergency response systems"
               },
               {
                 icon: "🌿",
                 title: "Green Campus",
-                description: "Eco-friendly initiatives, gardens, and sustainable practices throughout the campus"
+                description: "Eco-friendly initiatives, gardens, and sustainable practices throughout the six-acre campus"
               },
               {
-                icon: "🏥",
-                title: "Health Center",
-                description: "On-campus medical facility with trained staff for immediate health care"
+                icon: "⚡",
+                title: "Power Backup",
+                description: "Own generator set despite electric connection with twenty-four hour supply line for uninterrupted operations"
               },
               {
                 icon: "🚌",
                 title: "Transportation",
-                description: "Safe and reliable bus services with GPS tracking and trained drivers"
+                description: "School vehicles to bring children from remote places with safe and reliable transportation services"
               },
               {
-                icon: "🍽️",
-                title: "Cafeteria",
-                description: "Hygienic and nutritious meals prepared in modern kitchen facilities"
+                icon: "🏥",
+                title: "Health & Safety",
+                description: "Fire safety equipment and sanitary conditions duly certified for student well-being"
               },
               {
                 icon: "📱",
-                title: "Digital Integration",
-                description: "Wi-Fi campus, smart cards, and digital communication systems"
+                title: "Modern Technology",
+                description: "Smart classrooms, digital integration, and modern audio-visual equipment throughout the campus"
               }
             ].map((feature, index) => (
               <div 
                 key={index}
-                className={`p-8 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                className={`p-6 rounded-xl bg-gradient-to-br from-blue-50 to-green-50 border border-gray-200 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 dark:bg-gradient-to-br dark:from-gray-700 dark:to-gray-900 dark:border-gray-700 dark:hover:shadow-2xl ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <div className="text-3xl mb-4">{feature.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed dark:text-gray-300">{feature.description}</p>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import Navigation from '../../components/Navigation';
 import PageHero from '../../components/PageHero';
 import Footer from '../../components/Footer';
@@ -25,6 +26,7 @@ export default function Contact() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
 
   useEffect(() => {
     setIsLoaded(true);
@@ -38,26 +40,101 @@ export default function Contact() {
     }));
   };
 
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.subject) {
+      newErrors.subject = 'Please select a subject';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      toast.error('Please fix the errors in the form');
+      return;
+    }
+    
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success('Thank you for your message! We will get back to you soon.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+        setErrors({});
+      } else {
+        toast.error(`Error: ${result.error || 'Failed to send message. Please try again.'}`);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Failed to send message. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
+      <Toaster 
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+          success: {
+            duration: 5000,
+            iconTheme: {
+              primary: '#10b981',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            duration: 6000,
+            iconTheme: {
+              primary: '#ef4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
       <Navigation activePage="contact" />
       <PageHero 
         title="Get in Touch"
@@ -86,9 +163,16 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:text-white ${
+                        errors.name 
+                          ? 'border-red-500 focus:ring-red-500 dark:border-red-500' 
+                          : 'border-gray-300 dark:border-gray-700'
+                      }`}
                       placeholder="Enter your full name"
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 dark:text-gray-200">
@@ -101,9 +185,16 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:text-white ${
+                        errors.email 
+                          ? 'border-red-500 focus:ring-red-500 dark:border-red-500' 
+                          : 'border-gray-300 dark:border-gray-700'
+                      }`}
                       placeholder="Enter your email"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+                    )}
                   </div>
                 </div>
                 
@@ -132,7 +223,11 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 dark:bg-gray-800 dark:text-white ${
+                        errors.subject 
+                          ? 'border-red-500 focus:ring-red-500 dark:border-red-500' 
+                          : 'border-gray-300 dark:border-gray-700'
+                      }`}
                     >
                       <option value="">Select a subject</option>
                       <option value="admission">Admission Inquiry</option>
@@ -141,6 +236,9 @@ export default function Contact() {
                       <option value="general">General Information</option>
                       <option value="feedback">Feedback & Suggestions</option>
                     </select>
+                    {errors.subject && (
+                      <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.subject}</p>
+                    )}
                   </div>
                 </div>
                 
@@ -155,9 +253,16 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none dark:bg-gray-800 dark:text-white ${
+                      errors.message 
+                        ? 'border-red-500 focus:ring-red-500 dark:border-red-500' 
+                        : 'border-gray-300 dark:border-gray-700'
+                    }`}
                     placeholder="Tell us more about your inquiry..."
                   ></textarea>
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message}</p>
+                  )}
                 </div>
                 
                 <button

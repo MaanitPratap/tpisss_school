@@ -17,10 +17,10 @@ export default function PageHero({
   description, 
   isLoaded, 
   highlightText, 
-  logoLeft 
+  logoLeft
 }: PageHeroProps) {
   return (
-    <section id="home" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="home" className="py-16 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className={`${logoLeft ? 'flex items-center justify-center gap-4 mb-6' : 'mb-6'} ${!logoLeft ? 'text-center' : ''}`}>
